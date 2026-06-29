@@ -3,6 +3,33 @@
 <head>
 <title> &oslash;hltajm!</title>
 <style>
+
+body {
+	margin: 0; 
+	height: 100vh;
+	overflow: hidden;
+
+	background: url("beer_foam.jpg");
+	background-size: cover;
+	background-position: 50% calc(clamp(0, calc(42 - (100vh * 42 / 1200px)), 42) * 1%);
+	background-repeat: no-repeat;
+}
+
+div {
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -21,13 +48,12 @@ function startTime() {
 
 
 	if(today.getHours() < 17 && today.getHours() > 5){
-		h = 17 - today.getHours();
 		document.getElementById('addition').innerHTML = "Till &oslash;hl";
 	}else{
 		h = 1;
 		m = 1;
 		s = 1;
-		document.getElementById('addition').innerHTML = "Dags för &oslash;hl";	
+		document.getElementById('addition').innerHTML = "Dags fÃ¶r &oslash;hl";	
 	}
 
 
@@ -55,9 +81,9 @@ function getTimeString(time){
 </head>
 
 <body onload="startTime()">
-<div id="main" height:100% width:100% style="background-image:url('beer_foam.jpg');">
+<main>
 	<div id="txt" class="center" style="font-size: 25vw;"></div>
 	<div id="addition" class="center" style="font-size: 10vw;"></div>
-</div>
+</main>
 </body>
 </html>
